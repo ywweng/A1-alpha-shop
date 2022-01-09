@@ -1,0 +1,42 @@
+$footer-background: #e5e5e53a;
+$footer-span-color: #999999;
+
+#footer {
+  .footer-container {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 376px) {
+  #footer {
+    background-color: $footer-background;
+    .footer-container {
+      width: 85%;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      column-gap: 2rem;
+      .section {
+        display: flex;
+        flex-direction: column;
+        .footer-title {
+          font-size: 1.2rem;
+          font-weight: 700;
+          margin-bottom: 1.5rem;
+        }
+        span {
+          color: $footer-span-color;
+        }
+      }
+      .footer-logo {
+        width: 170px;
+        display: block;
+        margin: auto 0;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
