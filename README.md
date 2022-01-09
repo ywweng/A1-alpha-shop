@@ -9,4 +9,4 @@
 
 ### 畫面展示
 
-![image](https://github.com/ywweng/A1-alpha-shop/tree/main/image/v1_screenshot.png)
+![image](https://github.com/ywweng/A1-alpha-shop/blob/main/image/v1_screenshot.png)
