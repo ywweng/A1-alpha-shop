@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./scss/all.css">
+  <title>ALPHA shop</title>
+</head>
+
+<body>
+  <!-- <nav id="navbar">
+    <div class="nav-menu">
+      <div class="burger-container">
+        <label for="burger" class=""><img src="./static/burger.png" alt=""></label>
+        <input type="checkbox" id="burger">
+      </div>
+      <ul class="nav-list">
+        <li class="link"><a href="#">男款</a></li>
+        <li class="link"><a href="#">女款</a></li>
+        <li class="link"><a href="#">最新消息</a></li>
+        <li class="link"><a href="#">客製商品</a></li>
+        <li class="link"><a href="#">聯絡我們</a></li>
+      </ul>
+    </div>
+    <div class="nav-home">
+      <img src="./static/Logo@2x.png" alt="">
+    </div>
+    <div class="nav-action">
+      <div class="action">
+        <a href=""><img src="./static/search.png" alt=""></a>
+      </div>
+      <div class="action">
+        <a href=""><img src="./static/cart.png" alt=""></a>
+      </div>
+      <div class="action">
+        <a href=""><img src="./static/darkmode.png" alt=""></a>
+      </div>
+    </div>
+  </nav> -->
+
+  <main id="main">
+
+    <div id="left-container">
+      <div class="title">結帳</div>
+      <div class="stepper-container">
+        <div class="stepper">
+          <div class="circle checked"></div>
+          <div class="label">寄送地址</div>
+        </div>
+        <div class="stepper">
+          <div class="circle"></div>
+          <span class="stepper-connect"></span>
+          <div class="label">運送方式</div>
+        </div>
+        <div class="stepper">
+          <div class="circle"></div>
+          <span class="stepper-connect"></span>
+          <div class="label">付款資訊</div>
+        </div>
+      </div>
+      <div class="form-panel">
+        <section class="form-section">
+          <div class="section-title">寄送地址</div>
+          <div class="row-container name-container">
+            <div class="form-item salutation">
+              <label for="salutation">稱謂</label><br>
+              <div class="select-container">
+                <select name="salutation">
+                  <option value="先生">先生</option>
+                  <option value="女士">女士</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-item name">
+              <label for="name">姓名</label><br>
+              <input type="text" name="name" placeholder="請輸入姓名">
+            </div>
+          </div>
+          <div class="row-container contact-container">
+            <div class="form-item phone">
+              <label for="phone" class="title">電話</label><br>
+              <input type="text" id="phone" name="phone" placeholder="請輸入行動電話">
+            </div>
+            <div class="form-item email">
+              <label for="email" class="title">Email</label><br>
+              <input type="text" id="email" name="email" placeholder="請輸入電子郵件">
+            </div>
+          </div>
+          <div class="row-container residence-container">
+            <div class="form-item county">
+              <label for="county" class="title">縣市</label><br>
+              <div class="select-container">
+                <select id="county" name="county">
+                  <option value="台北市">台北市</option>
+                  <option value="台北市">新北市</option>
+                  <option value="台北市">桃園市</option>
+                  <option value="台北市">台中市</option>
+                  <option value="台北市">台南市</option>
+                  <option value="高雄市">高雄市</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-item address">
+              <label for="address" class="title">地址</label><br>
+              <input type="text" id="address" name="address" placeholder="請輸入地址">
+            </div>
+          </div>
+        </section>
+        <section class="form-section delivery-section d-none">
+          <div class="section-title">運送方式</div>
+          <div class="delivery-container">
+            <input type="radio" id="standard-delivery" name="delivery" checked>
+            <div class="delivery-item">
+              <label for="standard-delivery">
+                <div class="delivery">標準運送</div>
+                <div class="delivery-day">約3~7個工作天</div>
+                <div class="delivery-fee">免費</div>
+              </label>
+            </div>
+          </div>
+          <div class="delivery-container">
+            <input type="radio" id="DHL-delivery" name="delivery">
+            <div class="delivery-item">
+              <label for="DHL-delivery">
+                <div class="delivery" id="DHL-delivery">DHL 貨運</div>
+                <div class="delivery-day">48小時內送達</div>
+                <div class="delivery-fee">$500</div>
+              </label>
+            </div>
+          </div>
+        </section>
+        <section class="form-section d-none">
+          <div class="section-title">付款資訊</div>
+          <div class="form-item">
+            <label for="holder" class="title">持卡人姓名</label><br>
+            <input type="text" id="holder" name="holder" placeholder="John Doe">
+          </div>
+          <div class="form-item">
+            <label for="card-number" class="title">卡號</label><br>
+            <input type="text" id="card-number" name="card-number" maxlength="12" placeholder="1111 2222 3333 4444">
+          </div>
+          <div class="row-container valid-container">
+            <div class="form-item">
+              <label for="valid-thru" class="title">有效期限</label><br>
+              <input type="month" id="valid-thru" name="valid-thru" value="2021-12">
+            </div>
+            <div class="form-item">
+              <label for="cvc" class="title">CVC/CCV</label><br>
+              <input type="password" id="cvc" name="cvc" maxlength="3">
+            </div>
+          </div>
+        </section>
+        <div class="control-btn">
+          <button class="previous-btn" disabled>← 上一步</button>
+          <button class="next-btn">下一步 ➝</button>
+        </div>
+      </div>
+    </div>
+    <div id="right-container">
+      <div class="cart-panel">
+        <div class="cart-title">購物籃</div>
+        <div class="item-container">
+          <div class="item-img">
+            <img src="./static/item1.png" alt="">
+          </div>
+          <div class="item-content">
+            <div class="item-title">破壞補丁修身牛仔褲</div>
+            <div class="item-count">
+              <button class="count-btn" id="count-minus">-</button>
+              <span class="count">1</span>
+              <button class="count-btn" id="count-plus">+</button>
+            </div>
+            <div class="item-price">$3,999</div>
+          </div>
+        </div>
+        <div class="item-container">
+          <div class="item-img">
+            <img src="./static/item2.png" alt="">
+          </div>
+          <div class="item-content">
+            <div class="item-title">刷色直筒牛仔褲</div>
+            <div class="item-count">
+              <button class="count-btn" id="count-minus">-</button>
+              <span class="count">1</span>
+              <button class="count-btn" id="count-plus">+</button>
+            </div>
+            <div class="item-price">$1,299</div>
+          </div>
+        </div>
+      </div>
+      <div class="cart-shipping">
+        <span>運費</span><span class="shipping">免費</span>
+      </div>
+      <div class="cart-total">
+        <span>小計</span><span class="total">$5,298</span>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+</body>
+
+<script src="./app.js"></script>
+
+</html>
