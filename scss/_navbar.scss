@@ -68,7 +68,7 @@ $body-bg: #ffffff;
     }
     .nav-menu {
       display: grid;
-      grid-template-columns: 2.5fr auto 1fr;
+      grid-template-columns: repeat(3, minmax(auto-fit, 5fr));
       grid-template-rows: 56px;
       .nav-list {
         grid-column: 1 / 2;
@@ -80,12 +80,17 @@ $body-bg: #ffffff;
           border: unset;
         }
       }
+      .nav-home {
+        grid-column: 2 / 3;
+        all: unset;
+        margin: auto 0;
+        img {
+          display: block;
+        }
+      }
       .nav-action {
         max-height: 56px;
         justify-content: flex-end;
-        // position: absolute;
-        // top: 0;
-        // right: 0;
         grid-column: 3 / 4;
       }
     }
