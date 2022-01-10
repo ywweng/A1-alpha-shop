@@ -72,7 +72,7 @@ button {
   z-index: 99;
 }
 
-#navbar .nav-menu input:checked ~ .nav-list {
+#navbar .nav-menu input:checked ~ .list-container > .nav-list {
   max-height: -webkit-fit-content;
   max-height: -moz-fit-content;
   max-height: fit-content;
@@ -127,12 +127,10 @@ button {
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 #navbar .nav-home img {
+  display: block;
   max-width: 170px;
   -o-object-fit: contain;
      object-fit: contain;
@@ -218,6 +216,18 @@ button {
 
 .d-none {
   display: none;
+}
+
+.delivery-name {
+  font-size: 14px;
+}
+
+.delivery-day {
+  font-size: 12px;
+}
+
+.delivery-fee {
+  font-size: 12px;
 }
 
 html,
@@ -409,22 +419,13 @@ body {
   margin: 11px 0;
 }
 
-#main #left-container .form-panel .delivery-container .delivery-item .delivery {
-  font-size: 14px;
-}
-
-#main #left-container .form-panel .delivery-container .delivery-item .delivery-day {
-  font-size: 12px;
-}
-
 #main #left-container .form-panel .delivery-container .delivery-item .delivery-fee {
   position: absolute;
   top: 13px;
   right: 13px;
-  font-size: 12px;
 }
 
-#main #left-container .form-panel .delivery-container .delivery-item #DHL-shipping {
+#main #left-container .form-panel .delivery-container .delivery-item #DHL-delivery {
   font-weight: 700;
 }
 
@@ -445,6 +446,7 @@ body {
 #main #left-container .control-btn .previous-btn {
   border: none;
   background: none;
+  margin-right: 40%;
   cursor: pointer;
 }
 
@@ -453,7 +455,12 @@ body {
 }
 
 #main #left-container .control-btn .next-btn {
-  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
   height: 46px;
   border: none;
   border-radius: 8px;
@@ -464,10 +471,6 @@ body {
 
 #main #left-container .control-btn .next-btn:hover {
   opacity: 0.9;
-}
-
-#main #left-container .control-btn[disabled] {
-  display: none;
 }
 
 #main #right-container {
@@ -507,8 +510,6 @@ body {
 }
 
 #main #right-container .cart-panel .item-container .item-img img {
-  width: 100%;
-  height: 100%;
   -o-object-fit: fill;
      object-fit: fill;
 }
@@ -585,13 +586,11 @@ body {
   #main {
     width: 85%;
     margin: 0 auto;
-    -ms-grid-columns: (1fr)[12];
-        grid-template-columns: repeat(12, 1fr);
-    -ms-grid-rows: auto;
-        grid-template-rows: auto;
+    -ms-grid-columns: (minmax(min-content, 1fr))[12];
+        grid-template-columns: repeat(12, minmax(-webkit-min-content, 1fr));
+        grid-template-columns: repeat(12, minmax(min-content, 1fr));
   }
   #main #left-container {
-    width: 100%;
     -ms-grid-column: 1;
     -ms-grid-column-span: 6;
     grid-column: 1 / 7;
@@ -600,10 +599,13 @@ body {
     font-size: 2rem;
   }
   #main #left-container .stepper-container .stepper .label {
-    display: block;
+    display: inline-block;
   }
   #main #left-container .stepper-container .stepper .stepper-connect {
     right: calc(100% + 1rem);
+  }
+  #main #left-container .form-panel .section-container {
+    height: 350px;
   }
   #main #left-container .form-panel .row-container {
     display: -ms-grid;
@@ -615,6 +617,10 @@ body {
     position: relative;
     bottom: 0;
   }
+  #main #left-container .control-btn .previous-btn[disabled] {
+    display: block;
+    visibility: hidden;
+  }
   #main #right-container {
     -ms-grid-column: 8;
     -ms-grid-column-span: 5;
@@ -622,8 +628,10 @@ body {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
-    margin-top: 5rem;
-    width: 100%;
+    margin-top: 8rem;
+    height: -webkit-min-content;
+    height: -moz-min-content;
+    height: min-content;
   }
   #main #right-container .cart-panel .cart-title {
     display: block;

@@ -27,7 +27,7 @@ function handleBtnControlClicked(e) {
     const prevStep = steps[step - 1];
     nowStep.classList.remove("stepper--active");
     prevStep.classList.remove("checked");
-    prevStep.classList.add("stepper__container--active");
+    prevStep.classList.add("stepper--active");
     formSection[step].classList.toggle("d-none");
     formSection[step - 1].classList.toggle("d-none");
     step -= 1;
@@ -38,10 +38,9 @@ function handleBtnControlClicked(e) {
 // 表單按鈕渲染
 function setBtnDisabled() {
   if (step === 0) {
-    prevBtn.setAttribute("disabled", "disabled");
+    prevBtn.setAttribute("disabled", "");
   } else {
     prevBtn.removeAttribute("disabled");
-    nextBtn.style.width = "156px";
   }
 
   if (step === 2) {

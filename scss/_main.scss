@@ -50,6 +50,19 @@ $border-color: #f0f0f5;
   display: none;
 }
 
+//宣告傳送區塊font-size的樣式
+$deliveryfontSizes: (
+  "name": 14px,
+  "day": 12px,
+  "fee": 12px,
+);
+@each $name, $fontSize in $deliveryfontSizes {
+  //產生不同命名的區塊樣式
+  .delivery-#{$name} {
+    font-size: $fontSize;
+  }
+}
+
 html,
 body {
   height: 100%;
@@ -192,19 +205,18 @@ body {
         .delivery-item {
           margin: 11px 0;
 
-          .delivery {
-            font-size: 14px;
-          }
-          .delivery-day {
-            font-size: 12px;
-          }
+          // .delivery-name {
+          //   font-size: 14px;
+          // }
+          // .delivery-day {
+          //   font-size: 12px;
+          // }
           .delivery-fee {
             position: absolute;
             top: 13px;
             right: 13px;
-            font-size: 12px;
           }
-          #DHL-shipping {
+          #DHL-delivery {
             font-weight: 700;
           }
         }
@@ -221,13 +233,15 @@ body {
       .previous-btn {
         border: none;
         background: none;
+        margin-right: 40%;
         cursor: pointer;
         &[disabled] {
           display: none;
         }
       }
       .next-btn {
-        width: 100%;
+        flex: 1;
+        min-width: max-content;
         height: 46px;
         border: none;
         border-radius: 8px;
@@ -237,9 +251,6 @@ body {
         &:hover {
           opacity: 0.9;
         }
-      }
-      &[disabled] {
-        display: none;
       }
     }
   }
@@ -268,8 +279,6 @@ body {
           height: 100px;
           margin-right: 1.25rem;
           img {
-            width: 100%;
-            height: 100%;
             object-fit: fill;
           }
         }
@@ -323,11 +332,8 @@ body {
   #main {
     width: 85%;
     margin: 0 auto;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto;
-    // column-gap: 8%;
+    grid-template-columns: repeat(12, minmax(min-content, 1fr));
     #left-container {
-      width: 100%;
       grid-column: 1 / 7;
       .title {
         font-size: 2rem;
@@ -335,7 +341,7 @@ body {
       .stepper-container {
         .stepper {
           .label {
-            display: block;
+            display: inline-block;
           }
           .stepper-connect {
             right: calc(100% + 1rem);
@@ -343,6 +349,9 @@ body {
         }
       }
       .form-panel {
+        .section-container {
+          height: 350px;
+        }
         .row-container {
           display: grid;
           grid-auto-flow: column;
@@ -352,13 +361,19 @@ body {
       .control-btn {
         position: relative;
         bottom: 0;
+        .previous-btn {
+          &[disabled] {
+            display: block;
+            visibility: hidden;
+          }
+        }
       }
     }
     #right-container {
       grid-column: 8 / 13;
       justify-content: flex-end;
-      margin-top: 5rem;
-      width: 100%;
+      margin-top: 8rem;
+      height: min-content;
       .cart-panel {
         .cart-title {
           display: block;

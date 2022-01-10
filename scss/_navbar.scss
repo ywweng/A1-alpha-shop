@@ -15,7 +15,7 @@ $body-bg: #ffffff;
     label {
       z-index: 99;
     }
-    input:checked ~ .nav-list {
+    input:checked ~ .list-container > .nav-list {
       max-height: fit-content;
     }
     input:checked ~ .nav-action {
@@ -51,8 +51,8 @@ $body-bg: #ffffff;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    justify-content: center;
     img {
+      display: block;
       max-width: 170px;
       object-fit: contain;
     }
